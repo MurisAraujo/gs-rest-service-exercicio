@@ -34,6 +34,7 @@ public class GreetingControllerTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	// O teste abaixo, verifica se no path greeting há parametros e caso tenha ele apresenta na mensagem o nome informado no parametro
 	
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
@@ -42,7 +43,7 @@ public class GreetingControllerTests {
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
 	}
 
-	//
+	// O teste abaixo, verifica se no path greeting há parametros e caso não tenha nenhum retorna a mensagem padrão.
 
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
